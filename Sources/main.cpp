@@ -8,7 +8,7 @@ float CustoAtualPrevidencia(){
 	float custoAtualPrevi = 0;
 	scanf("%f", &custoAtualPrevi);
 	
-	printf("\n Valor atual do custo com previdencia eh de: %.2f \n", custoAtualPrevi);
+	printf("Valor atual do custo com previdencia eh de: %.2f \n", custoAtualPrevi);
 	
 	return custoAtualPrevi;
 	
@@ -24,6 +24,33 @@ float QuantosContemplados(float salarioMinimo){
 	
 }
 
+int PercAumento(){
+	
+	int Aumento = 0;
+	
+	printf("Qual o valor de aumento do salario minimo voce deseja?    ");
+	scanf("%d", &Aumento);
+	
+	return Aumento;
+}
+
+
+float simulaAumentoSalMini(float salarioMinimo){
+	
+	int Aumento = PercAumento();
+	
+	float AumentoPer = Aumento / 100;
+	
+	float NovoSalario = salarioMinimo + (salarioMinimo * Aumento);
+	
+	printf("Novo salario minimo seria de:   %.2f", NovoSalario);
+	
+}
+
+
+
+
+
 int main(){
 	
 
@@ -31,7 +58,8 @@ int main(){
 	
 	printf("Qual o salario minimo atual?  ");
 	scanf(" %f", &salarioMinimo);
-	printf("\n ----------------------------------------- \n");
+	printf("\n");
+	printf("----------------------------------------- \n");
 	
 	QuantosContemplados(salarioMinimo);
 	
