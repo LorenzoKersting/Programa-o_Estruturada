@@ -3,31 +3,37 @@
 
   
 
+float CustoAtualPrevidencia(){
 
-void CustoAtualPrevidencia(){
-	float custoAtualPrevi;
-	char confirma;
-	
+	float custoAtualPrevi = 0;
 	scanf("%f", &custoAtualPrevi);
 	
-	printf("\n Valor atual do custo com previdencia eh de: %.2f", custoAtualPrevi);
+	printf("\n Valor atual do custo com previdencia eh de: %.2f \n", custoAtualPrevi);
+	
+	return custoAtualPrevi;
 	
 }
 
-float QuantosContemplados(float salarioAtual, float custoAtualPrevi){
+float QuantosContemplados(float salarioMinimo){
 	
-		float Contemplados = custoAtualPrevi / salarioAtual;
+		float custoAtualPrevi = CustoAtualPrevidencia();
 		
-		printf("Estes são os habitantes contemplados com a previdência: %.2f", Contemplados);
+		float Contemplados = custoAtualPrevi / salarioMinimo; 
+		
+		printf("Estes sao os habitantes contemplados com a previdencia: %.2f", Contemplados);
 	
 }
 
 int main(){
 	
-	float salarioAtual;
-	
-	CustoAtualPrevidencia();
-	
-	QuantosContemplados(float salarioAtual, float custoAtualPrevi);
 
+	float salarioMinimo = 0;
+	
+	printf("Qual o salario minimo atual?  ");
+	scanf(" %f", &salarioMinimo);
+	printf("\n ----------------------------------------- \n");
+	
+	QuantosContemplados(salarioMinimo);
+	
+	
 }
