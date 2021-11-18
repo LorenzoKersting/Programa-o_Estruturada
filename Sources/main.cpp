@@ -48,7 +48,9 @@ float simulaAumentoSalMini(float salarioMinimo){
 }
 
 
-
+float ImpactoAumento(){
+	
+}
 
 
 int main(){
