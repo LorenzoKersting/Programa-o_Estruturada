@@ -1,89 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-  
+int Anos (int m, int Ano);
+float SalMin (int n, float *SalMin);
+float GastosFeracao (int o, float *GastoFed);
+float GastosPrevidencia (int p, float *GastoPrev);
+float PreviNosTotais (float *GastoFed, *GastoPrev); //Saber quanto representa dos gastos da federação
+float SalMinNaPrevi () //Quantos atendemos se todos ganharem o mínimo possível
+float CrescimentoSalparaCrescimentoGastoPrevi () //Entender quantos % o salário aumenta e quantos % o gasto com previdencia aumentou, é proporcional?
 
-float CustoAtualPrevidencia(){
-	
-	printf("Qual o custo atual aplicado na previdencia social? ");
-	float custoAtualPrevi = 0;
-	scanf("%f", &custoAtualPrevi);
-	
-	printf("----------------------------------------- \n");
-	printf("Valor atual do custo com previdencia eh de: %.2f \n", custoAtualPrevi);
-	
-	
-	return custoAtualPrevi;
-	
-}
+int main()
+{
 
-float QuantosContemplados(float salarioMinimo){
+	float SalMin[4], GastoFed[4], GastoPrev[4];
+	int Ano[4], i, j, k, l;
 	
-		float custoAtualPrevi = CustoAtualPrevidencia();
 		
-		float Contemplados = custoAtualPrevi / salarioMinimo; 
-		
-		printf("Estes sao os habitantes contemplados com a previdencia: %.2f", Contemplados);
-		printf("----------------------------------------- \n");
-}
-
-// FUNÇÃO SEM PONTEIRO SOMENTE RECEBE O VALOR REFERENTE AO AUMENTO
-int PercAumento(){
-	
-	int Aumento = 0;
-	
-	printf("Qual o valor de aumento do salario minimo voce deseja?    ");
-	scanf("%d", &Aumento);
-
-	
-	return Aumento;
-}
-
-// FUNÇÃO QUE CALCULA O AUMENTO DO SALARIO MINIMO E DIRECIONA PARA OS CONTEMPLADOS
-float simulaAumentoSalMini(float *salarioMinimo ){
-	
-	int Aumento = PercAumento();
-	
-	float AumentoPer = Aumento / 100;
-	
-	float *NovoSalario = *salarioMinimo + (*salarioMinimo * Aumento);
-	
-	printf("Novo salario minimo seria de:   %.2f", *NovoSalario);
-	
-	QuantosContemplados(*NovoSalario);
-	
-}
-
-
-float ImpactoAumento(){
-	
-}
-
-
-int main(){
-	float *salarioMinimo = 0;
-	int aux = 0;
-	
-	printf("----------------------------------------- \n");
-	printf("Qual o salario minimo atual?  ");
-	scanf(" %f", &salarioMinimo);
-	printf("\n");
-	
-	printf("Quer aumentar o salário mínimo atual?  1 - SIM  2 - NAO  ");
-	scanf("%d", &aux);
-	printf("\n");
-	
-	if(aux == 1){
-			
-		simulaAumentoSalMini(*salarioMinimo);	
-		
-	}else {
-		QuantosContemplados(*salarioMinimo);
+	printf("Digite os anos a serem analisados:  \n");
+	for (i = 0; i<4; i++)
+	{
+		printf("ano: %d ", i+1);
+		scanf("%d", &Ano[i]);
+		printf("\n");
+				
 	}
 	
-	printf("----------------------------------------- \n");
+	printf("Digite os salarios para cada ano  \n");
+	for (j = 0; j<4; j++)
+	{
+		printf("salario: %d", j+1);
+		scanf("%f", &SalMin[j]);	
+		printf("\n");
+	}
 	
-
+	printf("Gastos totais da federacao \n");
+	for (k = 0; k<4; k++)
+	{
+		printf("Gastos Federacao: %d", k+1);
+		scanf("%f", &GastoFed[k]);	
+		printf("\n");	
+	}
 	
+	printf("Gastos totais da previdencia \n");
+	for (l = 0; l<4; l++)
+	{
+		printf("Gastos Previdencia: %d", l+1);
+		scanf("%f", &GastoPrev[l]);	
+		printf("\n");	
+	}
 	
+		
+	float Participacao = ((GastoPrev * 100)/ GastoFed)
+	float Ano 1 - Participacao[1]
+		  Ano 2 - Participacao[2]
+		  Ano 3 - Participacao[3]
+		  Ano 4 - Participacao[4]
 }
